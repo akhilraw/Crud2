@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//test routes
+
+Route::get('/books', 'Crud\BookController@index');
