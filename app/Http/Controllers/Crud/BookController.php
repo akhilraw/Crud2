@@ -57,6 +57,15 @@ class BookController extends Controller
     public function show($id)
     {
         //
+        $show = Book::show($id);
+        if($show)
+        {
+          return view('book.show', compact('show'));
+        }
+        else {
+          return response()->json(['status'=>'false', 'message'=>'Oops! Something Went Wrong']);
+        }
+        
     }
 
     /**
