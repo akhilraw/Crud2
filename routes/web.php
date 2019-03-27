@@ -25,3 +25,5 @@ Route::get('/books', 'Crud\BookController@index');
 Route::get('/add', 'Crud\BookController@create');
 
 Route::post('/store', 'Crud\BookController@store');
+
+Route::get('/show/book/{id}', 'Crud\BookController@show');
