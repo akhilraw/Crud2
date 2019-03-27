@@ -49,7 +49,18 @@
             </tr>
             </thead>
             <tbody>
-
+              @foreach($books as $book)
+              <tr>
+                <td>{{$book['id']}}</td>
+                <td>{{$book['title']}}</td>
+                <td><img style="width:50px;" class="img-responsive" src="{{URL::to('/upload')}}/{{ $book['image']}}" alt="image-not-available"/></td>
+                <td>{{$book['author']}}</td>
+                <td>{{$book['description']}}</td>
+                <td>{{$book['quantity']}}</td>
+                <td>{{$book['price']}}</td>
+                <td><button>Edit</button></td>
+                <td><button>Delete</button></td>
+                @endforeach
             </tbody>
 
 
