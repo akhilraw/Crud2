@@ -40,7 +40,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         //
-        $store = Book::store();
+        $store = Book::store($request);
         if($store)
         {
           return response()->json(['status'=>'true', 'message'=>'Book Saved Successfully']);
