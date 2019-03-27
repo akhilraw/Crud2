@@ -39,6 +39,21 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group row">
+                              <label for="isAdmin" class="col-md-4 col-form-label text-md-right">Register As Admin</label>
+
+                              <div class="col-md-6">
+                                  <select name="isAdmin" class="form-control" >
+                                      <option value=1>Yes</option>
+                                      <option value=0>No</option>
+                                      {{--<option value="customer">Customer</option>--}}
+                                  </select>
+                              </div>
+                          </div>
+
+
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
