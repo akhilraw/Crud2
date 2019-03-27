@@ -44,6 +44,7 @@
                 <td><b>Description</b></td>
                 <td><b>Available Quantity</b></td>
                 <td><b>Price</b></td>
+                <td><b>View</b></td>
                 <td><b>Edit</b></td>
                 <td><b>Delete</b></td>
             </tr>
@@ -58,15 +59,16 @@
                 <td>{{$book['description']}}</td>
                 <td>{{$book['quantity']}}</td>
                 <td>{{$book['price']}}</td>
-                <td><button>Edit</button></td>
-                <td><button>Delete</button></td>
+                <td><a href="<?php echo url("/show/book/{$book['id']}")?>" class="btn btn-outline-primary"><i class='fas fa-eye'></i></a></td>
+                <td><a href="<?php echo url("/edit/book/{$book['id']}")?>" class="btn btn-outline-primary"><i class='fas fa-edit'></i></a></td>
+                <td><a class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-delete-{{ $book['id']}}"><i class="fa fa-trash"></i></a>
                 @endforeach
             </tbody>
 
 
         </table>
 
-        <a href="<?php echo url('/create')?>">
+        <a href="<?php echo url('/add')?>">
             <button class="float-left submit-button" >Add New Book</button>
         </a>
         </div>
