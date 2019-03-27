@@ -30,6 +30,12 @@ class Book
     return $store;
   }
 
+  public static function show($id)
+  {
+    $show = Model::findOrFail($id)->toArray();
+    return $show;
+  }
+
 
 }
 
