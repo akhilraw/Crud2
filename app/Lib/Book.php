@@ -42,6 +42,13 @@ class Book
     return $edit;
   }
 
+  public static function update($id)
+  {
+    $data = Model::findOrFail($id)->toArray();
+    $update = Model::Update(['title'=>$data['title'], 'price'=>$data['price'], 'author'=>$data['author'], 'description'=>$data['description'], 'quantity'=>$data['quantity'],'image'=>$data['image']]);
+    dd($update);
+  }
+
 
 }
 
