@@ -77,8 +77,8 @@ class BookController extends Controller
     public function edit($id)
     {
         //
-        $edit = Book::edit($id);
-        if($edit)
+        $book = Book::edit($id);
+        if($book)
         {
           return view('book.edit', compact('book'));
         }
