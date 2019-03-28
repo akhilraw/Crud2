@@ -36,6 +36,12 @@ class Book
     return $show;
   }
 
+  public static function edit($id)
+  {
+    $edit = Model::findOrFail($id)->toArray();
+    return $edit;
+  }
+
 
 }
 
