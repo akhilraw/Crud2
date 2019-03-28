@@ -65,7 +65,7 @@ class BookController extends Controller
         else {
           return response()->json(['status'=>'false', 'message'=>'Oops! Something Went Wrong']);
         }
-        
+
     }
 
     /**
@@ -77,6 +77,11 @@ class BookController extends Controller
     public function edit($id)
     {
         //
+        $edit = Book::edit($id);
+        if($edit)
+        {
+          return view('book.edit', compact('book'));
+        }
     }
 
     /**
