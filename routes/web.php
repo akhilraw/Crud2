@@ -29,3 +29,5 @@ Route::post('/store', 'Crud\BookController@store');
 Route::get('/show/book/{id}', 'Crud\BookController@show');
 
 Route::get('/edit/book/{id}', 'Crud\BookController@edit');
+
+Route::PATCH('/update', 'Crud\BookController@update');
