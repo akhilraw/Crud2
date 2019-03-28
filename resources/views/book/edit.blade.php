@@ -4,7 +4,8 @@
 
 <div class="container">
   <div class="col-md-12" >
-     <form method="post" action="{{url('/update')}}" enctype="multipart/form-data">
+     <form method="post" action="{{ route('update', $book) }}" enctype="multipart/form-data">
+       <input name="_method" type="hidden" value="PATCH">
        @csrf
          <div class="form-group">
              <label for="title">Book Title:</label>
