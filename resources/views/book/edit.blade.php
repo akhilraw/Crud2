@@ -28,7 +28,7 @@
          </div>
          <div class="form-group">
          <label for="image">upload Image:</label>
-         <input type="file" class="form-control" name="image" value="{{$book['image']}}" required>
+         <input type="file" class="form-control" name="image" value="{{$book['image']}}" >
          </div>
          <button type="submit" class="form-control">Update</button>
      </form>
