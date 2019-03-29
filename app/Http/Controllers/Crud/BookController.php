@@ -110,5 +110,10 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+        $destroy = Book::destroy($id);
+        if($destroy)
+        {
+          return redirect('/books');
+        }
     }
 }
