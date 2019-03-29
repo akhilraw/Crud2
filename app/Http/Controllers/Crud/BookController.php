@@ -93,12 +93,11 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        // dd($request->toArray());
-        $update = Book::update($id);
+      //
+        $update = Book::update($request, $id);
         if($update)
         {
-          return view('book.index');
+          return redirect('/books');
         }
     }
 
