@@ -31,3 +31,5 @@ Route::get('/show/book/{id}', 'Crud\BookController@show');
 Route::get('/edit/book/{id}', 'Crud\BookController@edit');
 
 Route::PATCH('/update/book{id}', 'Crud\BookController@update')->name('update');
+
+Route::DELETE('/delete/book/{id}', 'Crud\BookController@destroy')->name('destroy');
