@@ -62,6 +62,34 @@
                 <td><a href="<?php echo url("/show/book/{$book['id']}")?>" class="btn btn-outline-primary"><i class='fas fa-eye'></i></a></td>
                 <td><a href="<?php echo url("/edit/book/{$book['id']}")?>" class="btn btn-outline-primary"><i class='fas fa-edit'></i></a></td>
                 <td><a class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-delete-{{ $book['id']}}"><i class="fa fa-trash"></i></a>
+                  <div class="modal fade text-xs-left" id="modal-delete-{{ $book['id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                               <div class="modal-content">
+                                   <div class="modal-header">
+                                       <h4 class="modal-title" id="myModalLabel2" align="center"><i class="icon-warning2"></i> Confirmation Message</h4>
+                                       <div>
+                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                               <span aria-hidden="true">&times;</span>
+                                           </button>
+                                       </div>
+
+                                   </div>
+                                   <div class="modal-body">
+                                       <p>Are you sure that you want to <strong>Delete</strong> this ticket ?</p>
+
+                                   </div>
+                                   <div class="modal-footer">
+                                       {!! Form::open(['route' => ['destroy', $book['id']], 'class' => 'delete', 'method' => 'DELETE']) !!}
+
+                                       <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                       <button type="submit" class="btn btn-outline-primary">Delete</button>
+
+                                       {!! Form::close() !!}
+
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
                 @endforeach
             </tbody>
 
