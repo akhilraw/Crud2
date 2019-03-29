@@ -49,6 +49,12 @@ class Book
     return $update;
   }
 
+  public static function destroy($id)
+  {
+    $destroy = Model::destroy($id);
+    return true;
+  }
+
 
 }
 
