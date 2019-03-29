@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Lib\Customer;
 
 class CustomerController extends Controller
 {
