@@ -15,6 +15,8 @@ class CustomerController extends Controller
     public function index()
     {
         //
+        $index = Customer::index();
+        return view('customer.viewbook', compact('index'));
     }
 
     /**
