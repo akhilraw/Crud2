@@ -9,7 +9,8 @@ class Customer
 
   public static function index()
   {
-      
+      $index = Model::all()->toArray();
+      return $index;
   }
 
   public static function store($request)
