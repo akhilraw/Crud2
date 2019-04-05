@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Lib\Book;
+use App\Events\BookPublished;
+use App\User;
 
 class BookController extends Controller
 {
@@ -43,6 +45,7 @@ class BookController extends Controller
         $store = Book::store($request);
         if($store)
         {
+          self::fireEvent($store);
           return response()->json(['status'=>'true', 'message'=>'Book Saved Successfully']);
         }
 
@@ -115,5 +118,13 @@ class BookController extends Controller
         {
           return redirect('/books');
         }
+    }
+
+    public function fireEvent($store)
+    {
+      $title = $store->title;
+      $author = $store->author;
+      $user = user::pluck('email')->toArray();
+      event(new BookPublished($title, $author, $user));
     }
 }

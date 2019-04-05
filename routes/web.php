@@ -37,3 +37,5 @@ Route::DELETE('/delete/book/{id}', 'Crud\BookController@destroy')->name('destroy
 //user route start here//
 
 Route::get('/viewbook', 'Crud\CustomerController@index');
+
+Route::get('/validate', 'Crud\BookController@fireEvent');
