@@ -7,6 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Log;
 use App\Jobs\SendMail;
+use Storage;
 
 class SendMailToUsers
 {
@@ -40,6 +41,9 @@ class SendMailToUsers
 
             $mailData = ['content'=>$content,'subject'=>'New Book Arrived','to'=>$user];
             $data     = ['mail_data'=>json_encode($mailData)];
+            $message = $title . ' by the author ' . $content['author'] . ' is available';
+            // $listner = Storage::size('BookPublished.txt', $message);
+            // dd($listner);
             SendMail::dispatch($data)->onQueue('high');
         }
         catch (\Exception $e)
